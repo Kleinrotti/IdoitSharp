@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/OKT90/IdoitSharp/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Copyright></Copyright>
+    <Version>0.1.1</Version>
+    <Company></Company>
+    <Authors>Kleinrotti</Authors>
+    <RepositoryUrl></RepositoryUrl>
+    <Description>Originally a fork from https://github.com/OKT90/Idoit.API.Client
+
+To make your i-doit API calls in C#</Description>
+    <PackageTags>cmdb,synetics,client,Api,i-doit,json,i-doit,JSON-RPC 2.0</PackageTags>
+    <AssemblyName>IdoitSharp</AssemblyName>
+    <RootNamespace>IdoitSharp</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\crott\Documents\Nextcloud\Programming\Projects\IdoitSharp\IdoitSharp\IdoitSharp.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\crott\source\repos\IdoitSharp\IdoitSharp\IdoitSharp.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Anemonis.JsonRpc" Version="1.24.2" />
+    <PackageReference Include="Anemonis.JsonRpc.ServiceClient" Version="1.16.0" />
+  </ItemGroup>
+
+</Project>
