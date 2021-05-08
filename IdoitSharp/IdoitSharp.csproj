@@ -5,12 +5,12 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/OKT90/IdoitSharp/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Kleinrotti/IdoitSharp</PackageProjectUrl>
     <Copyright></Copyright>
     <Version>0.1.1</Version>
     <Company></Company>
     <Authors>Kleinrotti</Authors>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/Kleinrotti/IdoitSharp</RepositoryUrl>
     <Description>Originally a fork from https://github.com/OKT90/Idoit.API.Client
 
 To make your i-doit API calls in C#</Description>

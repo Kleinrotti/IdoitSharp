@@ -1,6 +1,7 @@
 ﻿namespace IdoitSharp.CMDB
 {
     /// <summary>
+    /// This enum can be used to order a result from idoit objects.
     /// Use the extension method GetStringValue for the actual values!
     /// </summary>
     public enum IdoitOrderBy

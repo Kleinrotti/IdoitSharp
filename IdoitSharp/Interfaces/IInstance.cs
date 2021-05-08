@@ -1,9 +1,12 @@
 ﻿namespace IdoitSharp
 {
+    /// <summary>
+    /// Provides logic for any idoit instance.
+    /// </summary>
     public interface IInstance
     {
         /// <summary>
-        /// Returns the current <see cref="IdoitClient"/>
+        /// Returns the current <see cref="IClient"/>
         /// </summary>
         IClient Client { get; }
 

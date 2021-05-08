@@ -19,6 +19,8 @@ namespace IdoitSharp.CMDB.Dialog
         /// </summary>
         public new string Category { get; set; }
 
+        public int? ObjectId { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         public IdoitDialogInstance(IClient myClient) : base(myClient)
         {
         }

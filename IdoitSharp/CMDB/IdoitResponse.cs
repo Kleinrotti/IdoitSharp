@@ -11,18 +11,18 @@ namespace IdoitSharp.CMDB
         /// Id of the modified or created idoit object.
         /// </summary>
         [JsonProperty("id")]
-        public int id { get; internal set; }
+        public int Id { get; internal set; }
 
         /// <summary>
-        /// Response message from idoit
+        /// Response message from idoit.
         /// </summary>
         [JsonProperty("message")]
-        public string message { get; internal set; }
+        public string Message { get; internal set; }
 
         /// <summary>
-        /// Requested action was successfull
+        /// Indicates wether an action was successfull or not.
         /// </summary>
         [JsonProperty("success")]
-        public bool success { get; internal set; }
+        public bool Success { get; internal set; }
     }
 }

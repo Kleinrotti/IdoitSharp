@@ -35,6 +35,8 @@
         /// </summary>
         public bool Raw { get; set; }
 
+        public int? ObjectId { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         /// <summary>
         /// Read an idoit object. Set Filter, OrderBy, Sort or Limit Property to filter your result.
         /// </summary>

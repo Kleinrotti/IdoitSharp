@@ -2,9 +2,12 @@
 
 namespace IdoitSharp.CMDB.Logbook
 {
+    /// <summary>
+    /// Provides methods for the idoit logbook.
+    /// </summary>
     public class IdoitLogbookInstance : IdoitInstanceBase, IReadable<IdoitLogbookResponse[]>, ICreatable
     {
-        public int ObjectId { get; set; }
+        public int? ObjectId { get; set; }
         public string Message { get; set; }
         public string Description { get; set; }
 
@@ -63,9 +66,9 @@ namespace IdoitSharp.CMDB.Logbook
             parameter.Add("message", Message);
             parameter.Add("description", Description);
             var response = Execute<IdoitResponse>("cmdb.logbook.create");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
-            Id = response.id;
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
+            Id = response.Id;
             return Id;
         }
     }

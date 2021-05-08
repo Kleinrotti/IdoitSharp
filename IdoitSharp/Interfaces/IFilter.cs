@@ -2,6 +2,9 @@
 
 namespace IdoitSharp
 {
+    /// <summary>
+    /// Provides logic to filter idoit data.
+    /// </summary>
     public interface IFilter
     {
         /// <summary>

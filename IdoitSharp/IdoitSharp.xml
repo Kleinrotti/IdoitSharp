@@ -4,6 +4,16 @@
         <name>IdoitSharp</name>
     </assembly>
     <members>
+        <member name="T:IdoitSharp.IdoitBadResponseException">
+            <summary>
+            The exception that is thrown when when an idoit request was not valid.
+            </summary>
+        </member>
+        <member name="P:IdoitSharp.CMDB.Category.IdoitCategoryInstance`1.CateId">
+            <summary>
+            Category id
+            </summary>
+        </member>
         <member name="M:IdoitSharp.CMDB.Category.IdoitCategoryInstance`1.Read">
             <summary>
             Reads the given object. Property ObjectId has to be set.
@@ -106,6 +116,7 @@
         </member>
         <member name="T:IdoitSharp.CMDB.IdoitOrderBy">
             <summary>
+            This enum can be used to order a result from idoit objects.
             Use the extension method GetStringValue for the actual values!
             </summary>
         </member>
@@ -114,24 +125,30 @@
             Represents a response from Idoit when executing actions.
             </summary>
         </member>
-        <member name="P:IdoitSharp.CMDB.IdoitResponse.id">
+        <member name="P:IdoitSharp.CMDB.IdoitResponse.Id">
             <summary>
             Id of the modified or created idoit object.
             </summary>
         </member>
-        <member name="P:IdoitSharp.CMDB.IdoitResponse.message">
+        <member name="P:IdoitSharp.CMDB.IdoitResponse.Message">
             <summary>
-            Response message from idoit
+            Response message from idoit.
             </summary>
         </member>
-        <member name="P:IdoitSharp.CMDB.IdoitResponse.success">
+        <member name="P:IdoitSharp.CMDB.IdoitResponse.Success">
             <summary>
-            Requested action was successfull
+            Indicates wether an action was successfull or not.
             </summary>
         </member>
         <member name="T:IdoitSharp.CMDB.IdoitSort">
             <summary>
-            Use the extension method GetStringValue for the actual values!
+            This enum can be used to sort a result from idoit objects.
+            <br/>Use the extension method GetStringValue for the actual values!
+            </summary>
+        </member>
+        <member name="T:IdoitSharp.CMDB.Impact.IdoitImpactInstance">
+            <summary>
+            Provides methods for impact analysis.
             </summary>
         </member>
         <member name="M:IdoitSharp.CMDB.Impact.IdoitImpactInstance.Read">
@@ -139,6 +156,11 @@
             Perform an impact analysis for a specific object by its relation type identifier.
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:IdoitSharp.CMDB.Logbook.IdoitLogbookInstance">
+            <summary>
+            Provides methods for the idoit logbook.
+            </summary>
         </member>
         <member name="M:IdoitSharp.CMDB.Logbook.IdoitLogbookInstance.Read">
             <summary>
@@ -349,16 +371,14 @@
         </member>
         <member name="M:IdoitSharp.CMDB.Reports.IdoitReportsInstance.Read">
             <summary>
-            Read all reports.
+            Read all reports. Optionally set property ObjectId.
             </summary>
             <returns>An <see cref="T:IdoitSharp.CMDB.Reports.IdoitReportsResponse"/> array.</returns>
         </member>
-        <member name="M:IdoitSharp.CMDB.Reports.IdoitReportsInstance.Read(System.Int32)">
+        <member name="T:IdoitSharp.CMDB.Reports.IdoitReportsResponse">
             <summary>
-            Read a specific report.
+            Represents an object which will be returned from an reports request.
             </summary>
-            <param name="objId"></param>
-            <returns></returns>
         </member>
         <member name="T:IdoitSharp.Contants.IdoitCmdbStatus">
             <summary>
@@ -638,6 +658,11 @@
             Represents specific categories which idoit provides.
             </summary>
         </member>
+        <member name="T:IdoitSharp.Contants.IdoitStatusTypes">
+            <summary>
+            Object status types which idoit provides.
+            </summary>
+        </member>
         <member name="T:IdoitSharp.IdoitClient">
             <summary>
             Represents an Idoit API client.
@@ -763,6 +788,11 @@
             Represents a response from idoit when searching for objects.
             </summary>
         </member>
+        <member name="T:IdoitSharp.IArchiveable">
+            <summary>
+            Provides logic to archive idoit data.
+            </summary>
+        </member>
         <member name="T:IdoitSharp.IClient">
             <summary>
             Provides methods to connect to an idoit server.
@@ -803,7 +833,17 @@
         </member>
         <member name="T:IdoitSharp.ICreatable">
             <summary>
-            Provides logic to Create an idoit object.
+            Provides logic to create idoit data.
+            </summary>
+        </member>
+        <member name="T:IdoitSharp.IDeletable">
+            <summary>
+            Provides logic to delete data from idoit.
+            </summary>
+        </member>
+        <member name="T:IdoitSharp.IFilter">
+            <summary>
+            Provides logic to filter idoit data.
             </summary>
         </member>
         <member name="P:IdoitSharp.IFilter.ids">
@@ -822,9 +862,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:IdoitSharp.IInstance">
+            <summary>
+            Provides logic for any idoit instance.
+            </summary>
+        </member>
         <member name="P:IdoitSharp.IInstance.Client">
             <summary>
-            Returns the current <see cref="T:IdoitSharp.IdoitClient"/>
+            Returns the current <see cref="T:IdoitSharp.IClient"/>
             </summary>
         </member>
         <member name="P:IdoitSharp.IInstance.Id">
@@ -840,6 +885,38 @@
         <member name="P:IdoitSharp.IInstance.Value">
             <summary>
             Value of the object.
+            </summary>
+        </member>
+        <member name="T:IdoitSharp.IPurgeable">
+            <summary>
+            Provides logic to purge data from idoit.
+            </summary>
+        </member>
+        <member name="T:IdoitSharp.IReadable`1">
+            <summary>
+            Provides logic to read data from idoit. 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:IdoitSharp.IRecycable">
+            <summary>
+            Provides logic to recycle idoit data.
+            </summary>
+        </member>
+        <member name="T:IdoitSharp.IRequest">
+            <summary>
+            Provides logic for an idoit category request.
+            </summary>
+        </member>
+        <member name="M:IdoitSharp.IRequest.GetObject">
+            <summary>
+            Converts the current object without null properties.
+            </summary>
+            <returns>The current object with cleared out null properties.</returns>
+        </member>
+        <member name="T:IdoitSharp.IUpdatable">
+            <summary>
+            Provides logic to update idoit data.
             </summary>
         </member>
         <member name="T:IdoitSharp.StringValueAttribute">

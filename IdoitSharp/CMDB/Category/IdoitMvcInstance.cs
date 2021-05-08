@@ -27,8 +27,8 @@
             parameter.Add("cateID", CateId);
             parameter.Add("category", Category);
             var result = Execute<IdoitResponse>("cmdb.category.delete");
-            if (!result.success)
-                throw new IdoitBadResponseException(result.message);
+            if (!result.Success)
+                throw new IdoitBadResponseException(result.Message);
         }
 
         /// <summary>
@@ -42,8 +42,8 @@
             parameter.Add("category", Category);
             parameter.Add("entry", CateId);
             var response = Execute<IdoitResponse>("cmdb.category.recycle");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -57,8 +57,8 @@
             parameter.Add("category", Category);
             parameter.Add("entry", CateId);
             var response = Execute<IdoitResponse>("cmdb.category.archive");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace IdoitSharp
 {
     /// <summary>
-    /// Provides logic to Create an idoit object.
+    /// Provides logic to create idoit data.
     /// </summary>
     public interface ICreatable
     {

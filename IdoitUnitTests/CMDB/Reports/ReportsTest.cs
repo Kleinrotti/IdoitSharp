@@ -23,7 +23,7 @@ namespace IdoitUnitTests.CMDB
 
             foreach (var v in result)
             {
-                Console.WriteLine(v.title);
+                Console.WriteLine(v.Title);
             }
         }
     }

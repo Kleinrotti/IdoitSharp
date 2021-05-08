@@ -9,25 +9,16 @@
         {
         }
 
+        public int? ObjectId { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
         /// <summary>
-        /// Read all reports.
+        /// Read all reports. Optionally set property ObjectId.
         /// </summary>
         /// <returns>An <see cref="IdoitReportsResponse"/> array.</returns>
         public IdoitReportsResponse[] Read()
         {
             parameter = Client.Parameters;
-            return Execute<IdoitReportsResponse[]>("cmdb.reports.read");
-        }
-
-        /// <summary>
-        /// Read a specific report.
-        /// </summary>
-        /// <param name="objId"></param>
-        /// <returns></returns>
-        public IdoitReportsResponse[] Read(int objId)
-        {
-            parameter = Client.Parameters;
-            parameter.Add("id", objId);
+            parameter.Add("id", ObjectId);
             return Execute<IdoitReportsResponse[]>("cmdb.reports.read");
         }
     }

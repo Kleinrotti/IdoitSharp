@@ -2,10 +2,13 @@
 
 namespace IdoitSharp.CMDB.Impact
 {
+    /// <summary>
+    /// Provides methods for impact analysis.
+    /// </summary>
     public class IdoitImpactInstance : IdoitInstanceBase, IReadable<object>
     {
-        public int ObjectId { get; set; }
-        public int RelationType { get; set; }
+        public int? ObjectId { get; set; }
+        public int? RelationType { get; set; }
         public IdoitStatusTypes? Status { get; set; }
 
         public IdoitImpactInstance(IClient myClient) : base(myClient)

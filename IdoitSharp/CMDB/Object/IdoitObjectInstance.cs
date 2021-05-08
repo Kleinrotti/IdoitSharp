@@ -28,7 +28,7 @@ namespace IdoitSharp.CMDB.Object
         /// </summary>
         public string Description { get; set; }
 
-        public int ObjectId { get; set; }
+        public int? ObjectId { get; set; }
 
         public IdoitObjectInstance(IClient myClient) : base(myClient)
         {
@@ -48,9 +48,9 @@ namespace IdoitSharp.CMDB.Object
             parameter.Add("description", Description);
             parameter.Add("category", Category);
             var response = Execute<IdoitResponse>("cmdb.object.create");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
-            Id = response.id;
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
+            Id = response.Id;
             return Id;
         }
 
@@ -63,8 +63,8 @@ namespace IdoitSharp.CMDB.Object
             parameter.Add("id", ObjectId);
             parameter.Add("title", Value);
             var response = Execute<IdoitResponse>("cmdb.object.update");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace IdoitSharp.CMDB.Object
             parameter.Add("id", ObjectId);
             parameter.Add("status", "C__RECORD_STATUS__DELETED");
             var response = Execute<IdoitResponse>("cmdb.object.delete");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace IdoitSharp.CMDB.Object
             parameter = Client.Parameters;
             parameter.Add("object", ObjectId);
             var response = Execute<IdoitResponse>("cmdb.object.purge");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -100,8 +100,8 @@ namespace IdoitSharp.CMDB.Object
             parameter = Client.Parameters;
             parameter.Add("object", ObjectId);
             var response = Execute<IdoitResponse>("cmdb.object.archive");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace IdoitSharp.CMDB.Object
             parameter = Client.Parameters;
             parameter.Add("object", ObjectId);
             var response = Execute<IdoitResponse>("cmdb.object.markAsTemplate");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -135,8 +135,8 @@ namespace IdoitSharp.CMDB.Object
             parameter = Client.Parameters;
             parameter.Add("object", ObjectId);
             var response = Execute<IdoitResponse>("cmdb.object.markAsMassChangeTemplate");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -147,8 +147,8 @@ namespace IdoitSharp.CMDB.Object
             parameter = Client.Parameters;
             parameter.Add("object", ObjectId);
             var response = Execute<IdoitResponse>("cmdb.object.recycle");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
     }
 }

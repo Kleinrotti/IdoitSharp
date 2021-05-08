@@ -4,6 +4,10 @@
     {
         public int? ObjectId { get; set; }
         public IRequest ObjectRequest { get; set; }
+
+        /// <summary>
+        /// Category id
+        /// </summary>
         public int? CateId { get; set; }
 
         public T Object { get; protected set; }
@@ -35,9 +39,9 @@
             parameter.Add("objID", ObjectId);
             parameter.Add("category", Category);
             var response = Execute<IdoitResponse>("cmdb.category.create");
-            Id = response.id;
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            Id = response.Id;
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
             return Id;
         }
 
@@ -51,8 +55,8 @@
             parameter.Add("objID", ObjectId);
             parameter.Add("category", Category);
             var response = Execute<IdoitResponse>("cmdb.category.update");
-            if (!response.success)
-                throw new IdoitBadResponseException(response.message);
+            if (!response.Success)
+                throw new IdoitBadResponseException(response.Message);
         }
 
         /// <summary>
@@ -65,8 +69,8 @@
             parameter.Add("objID", ObjectId);
             parameter.Add("category", Category);
             var result = Execute<IdoitResponse>("cmdb.category.quickpurge");
-            if (!result.success)
-                throw new IdoitBadResponseException(result.message);
+            if (!result.Success)
+                throw new IdoitBadResponseException(result.Message);
         }
 
         /// <summary>
@@ -79,8 +83,8 @@
             parameter.Add("category", Category);
             parameter.Add("entry", CateId);
             var result = Execute<IdoitResponse>("cmdb.category.purge");
-            if (!result.success)
-                throw new IdoitBadResponseException(result.message);
+            if (!result.Success)
+                throw new IdoitBadResponseException(result.Message);
         }
     }
 }

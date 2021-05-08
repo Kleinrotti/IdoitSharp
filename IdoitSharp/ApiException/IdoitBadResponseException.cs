@@ -3,9 +3,11 @@ using System.Runtime.Serialization;
 
 namespace IdoitSharp
 {
+    /// <summary>
+    /// The exception that is thrown when when an idoit request was not valid.
+    /// </summary>
     public class IdoitBadResponseException : Exception
     {
-        // Constructors
         public IdoitBadResponseException(string message) : base(message)
         {
         }
