@@ -2,7 +2,10 @@
 
 namespace IdoitSharp.CMDB.Dialog
 {
-    public class IdoitDialogInstance : IdoitInstanceBase, IReadable<DialogResult[]>, ICreatable, IUpdatable, IDeletable
+    /// <summary>
+    /// Provides methods for idoit dialogs.
+    /// </summary>
+    public sealed class IdoitDialogInstance : IdoitInstanceBase, IReadable<DialogResult[]>, ICreatable, IUpdatable, IDeletable
     {
         /// <summary>
         /// Attribute in category, e.g manufacturer.

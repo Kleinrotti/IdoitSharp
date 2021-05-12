@@ -3,9 +3,8 @@
     /// <summary>
     /// Provides methods to retrieve the idoit version and search for objects.
     /// </summary>
-    public class IdoitInstance : IdoitInstanceBase
+    public sealed class IdoitInstance : IdoitInstanceBase
     {
-        private IdoitSearchResponse[] responseSearch;
 
         public IdoitInstance(IClient myClient) : base(myClient)
         {

@@ -47,7 +47,7 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:IdoitSharp.CMDB.Category.IdoitMvcInstance`1.#ctor(IdoitSharp.IdoitClient)">
+        <member name="M:IdoitSharp.CMDB.Category.IdoitMvcInstance`1.#ctor(IdoitSharp.IClient)">
             <summary>
             Initializes a new instance of the IdoitMvcInstance class.
             </summary>
@@ -76,6 +76,11 @@
             Provides methods for SingleValue category objects.
             </summary>
             <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:IdoitSharp.CMDB.Dialog.IdoitDialogInstance">
+            <summary>
+            Provides methods for idoit dialogs.
+            </summary>
         </member>
         <member name="P:IdoitSharp.CMDB.Dialog.IdoitDialogInstance.Property">
             <summary>

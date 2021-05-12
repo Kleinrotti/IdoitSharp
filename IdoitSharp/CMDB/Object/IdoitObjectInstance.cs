@@ -5,7 +5,7 @@ namespace IdoitSharp.CMDB.Object
     /// <summary>
     /// Represents an IdoitObject which can be created, updated, read and archived.
     /// </summary>
-    public class IdoitObjectInstance : IdoitInstanceBase, IReadable<IdoitObjectResult>, ICreatable, IUpdatable,
+    public sealed class IdoitObjectInstance : IdoitInstanceBase, IReadable<IdoitObjectResult>, ICreatable, IUpdatable,
         IDeletable, IPurgeable, IArchiveable, IRecycable
     {
         /// <summary>

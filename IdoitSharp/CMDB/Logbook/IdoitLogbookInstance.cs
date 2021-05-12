@@ -5,7 +5,7 @@ namespace IdoitSharp.CMDB.Logbook
     /// <summary>
     /// Provides methods for the idoit logbook.
     /// </summary>
-    public class IdoitLogbookInstance : IdoitInstanceBase, IReadable<IdoitLogbookResponse[]>, ICreatable
+    public sealed class IdoitLogbookInstance : IdoitInstanceBase, IReadable<IdoitLogbookResponse[]>, ICreatable
     {
         public int? ObjectId { get; set; }
         public string Message { get; set; }

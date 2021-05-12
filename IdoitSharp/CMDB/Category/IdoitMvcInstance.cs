@@ -10,7 +10,7 @@
         /// Initializes a new instance of the IdoitMvcInstance class.
         /// </summary>
         /// <param name="myClient"></param>
-        public IdoitMvcInstance(IdoitClient myClient) : base(myClient)
+        public IdoitMvcInstance(IClient myClient) : base(myClient)
         {
             Object = new T();
             Category = Object.category_id;

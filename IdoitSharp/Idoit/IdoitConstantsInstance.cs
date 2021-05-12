@@ -20,7 +20,7 @@ namespace IdoitSharp.Idoit
         private string valueName;
         private IDictionary<string, string> response;
 
-        public IdoitConstantsInstance(IdoitClient myClient) : base(myClient)
+        public IdoitConstantsInstance(IClient myClient) : base(myClient)
         {
         }
 

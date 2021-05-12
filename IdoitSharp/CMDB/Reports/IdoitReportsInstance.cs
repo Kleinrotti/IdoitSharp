@@ -3,7 +3,7 @@
     /// <summary>
     /// Provides methods for Reports.
     /// </summary>
-    public class IdoitReportsInstance : IdoitInstanceBase, IReadable<IdoitReportsResponse[]>
+    public sealed class IdoitReportsInstance : IdoitInstanceBase, IReadable<IdoitReportsResponse[]>
     {
         public IdoitReportsInstance(IClient myClient) : base(myClient)
         {

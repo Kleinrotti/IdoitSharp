@@ -12,7 +12,7 @@
 
         public T Object { get; protected set; }
 
-        public IdoitCategoryInstance(IdoitClient myClient) : base(myClient)
+        public IdoitCategoryInstance(IClient myClient) : base(myClient)
         {
         }
 

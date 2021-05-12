@@ -3,7 +3,7 @@
     /// <summary>
     /// Provides methods to read multiple objects from idoit. Filtering is also supported.
     /// </summary>
-    public class IdoitObjectsInstance : IdoitInstanceBase, IReadable<IdoitObjectsResult[]>
+    public sealed class IdoitObjectsInstance : IdoitInstanceBase, IReadable<IdoitObjectsResult[]>
     {
         public IdoitObjectsInstance(IClient myClient) : base(myClient)
         {
