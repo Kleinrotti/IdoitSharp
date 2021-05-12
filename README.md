@@ -53,13 +53,16 @@ The following requirements are necessary before installing or using the `IdoitSh
 |                                | `cmdb.dialog.read`                    |                                       | `Read()`                                             |
 |                                | `cmdb.dialog.delete`                  |                                       | `Delete()`                                           |
 |                                | `cmdb.dialog.update`                  |                                       | `Update()`                                           |
+| `IdoitSharp.CMDB.Logbook`      | `cmdb.logbook.create`                 | `IdoitLogbookInstance`                | `Create()`                                           |
+|                                | `cmdb.logbook.read`                   |                                       | `Read()`                                             |
+| `IdoitSharp.CMDB.Reports`      | `cmdb.reports.read`                   | `IdoitReportsInstance`                | `Read()`                                             |
+| `IdoitSharp.CMDB.Impact`       | `cmdb.impact.read`                    | `IdoitImpactInstance`                 | `Read()`                                             |
 
 ## A simple example
 
 ```cs
 using IdoitSharp.Idoit;
 using IdoitSharp;
-using IdoitSharp.Idoit.Response;
 
 namespace ConsoleApp
 {
@@ -77,10 +80,6 @@ namespace ConsoleApp
             var idoitVersion = idoit.Version();
             Console.WriteLine("The  currently i-doit version is: " + "'"+ idoitVersion.version +"'");
             Console.WriteLine("The currently i-doit type is: " + "'" + idoitVersion.type + "'" );
-            Console.WriteLine("Your userId is: " + "'" + idoitVersion.Login.userId + "'" );
-            Console.WriteLine("The name is: " + "'" + idoitVersion.Login.name + "'" );
-            Console.WriteLine("The username is: " + "'" + idoitVersion.Login.userName + "'" );
-            Console.WriteLine("The mandator is: " + "'" + idoitVersion.Login.mandator + "'" );
             var logout = idoitClient.Logout();
         }
     }
