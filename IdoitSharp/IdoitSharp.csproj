@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://github.com/OKT90/IdoitSharp/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Kleinrotti/IdoitSharp</PackageProjectUrl>
     <Copyright></Copyright>
     <Version>0.1.1</Version>
@@ -13,10 +12,12 @@
     <RepositoryUrl>https://github.com/Kleinrotti/IdoitSharp</RepositoryUrl>
     <Description>Originally a fork from https://github.com/OKT90/Idoit.API.Client
 
-To make your i-doit API calls in C#</Description>
+Library to make your i-doit API calls in C#</Description>
     <PackageTags>cmdb,synetics,client,Api,i-doit,json,i-doit,JSON-RPC 2.0</PackageTags>
     <AssemblyName>IdoitSharp</AssemblyName>
     <RootNamespace>IdoitSharp</RootNamespace>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -25,7 +26,7 @@ To make your i-doit API calls in C#</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\crott\source\repos\IdoitSharp\IdoitSharp\IdoitSharp.xml</DocumentationFile>
+    <DocumentationFile>D:\crott\Documents\Nextcloud\Programming\Projects\IdoitSharp\IdoitSharp\IdoitSharp.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,7 +8,7 @@ namespace IdoitUnitTests
         protected string URL;
         protected string APIKEY;
         protected string LANGUAGE;
-        protected IdoitClient idoitClient;
+        protected IClient idoitClient;
 
         public IdoitTestBase()
         {
