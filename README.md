@@ -2,6 +2,8 @@
 
 Make your i-doit API calls in C#
 
+[![NuGet package](https://img.shields.io/nuget/v/IdoitSharp)](https://www.nuget.org/packages/IdoitSharp)
+
 ## Project Details
 
 The lib `IdoitSharp` is going to make your work faster and more efficient, especially in the work relating to Visual studio.
