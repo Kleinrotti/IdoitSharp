@@ -31,7 +31,7 @@ namespace IdoitSharp.CMDB.Logbook
         /// <param name="since">List only entries since a specific date.</param>
         /// <param name="limit">Limit number of entries.</param>
         /// <returns>An <see cref="IdoitLogbookResponse"/> array.</returns>
-        public IdoitLogbookResponse[] Read(DateTime? since = null, int limit = 1000)
+        public IdoitLogbookResponse[] Read(DateTime since, int limit = 1000)
         {
             parameter = Client.Parameters;
             parameter.Add("limit", limit);
@@ -46,7 +46,7 @@ namespace IdoitSharp.CMDB.Logbook
         /// <param name="since">List only entries since a specific date.</param>
         /// <param name="limit">Limit number of entries.</param>
         /// <returns>An <see cref="IdoitLogbookResponse"/> array.</returns>
-        public IdoitLogbookResponse[] Read(int objectId, DateTime? since = null, int limit = 1000)
+        public IdoitLogbookResponse[] Read(int objectId, DateTime since, int limit = 1000)
         {
             parameter = Client.Parameters;
             parameter.Add("object_id", objectId);

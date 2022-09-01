@@ -1,5 +1,8 @@
 ﻿using IdoitSharp.CMDB.Logbook;
+using IdoitSharp.CMDB.Object;
+using IdoitSharp.Contants;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace IdoitUnitTests.CMDB
 {
@@ -10,22 +13,27 @@ namespace IdoitUnitTests.CMDB
         {
         }
 
-        //Read
         [TestMethod]
-        public void ReadTest()
+        public void CreateReadTest()
         {
-            //Arrange
-            var request = new IdoitLogbookInstance(idoitClient);
-            var result = request.Read();
-        }
+            int objectId;
+            var objectRequest = new IdoitObjectInstance(idoitClient);
 
-        [TestMethod]
-        public void CreateTest()
-        {
+            //Act:Create the Object
+            objectRequest.CmdbStatus = IdoitCmdbStatus.INOPERATION;
+            objectRequest.Type = IdoitObjectTypes.CLIENT;
+            objectRequest.Value = "My Client";
+            objectId = objectRequest.Create();
+
             var request = new IdoitLogbookInstance(idoitClient);
             request.Message = "Just a test";
-            request.ObjectId = 100;
-            var result = request.Create();
+            request.ObjectId = objectId;
+            var logId = request.Create();
+
+            var result = request.Read(objectId, DateTime.Today);
+            Assert.IsTrue(result.Length > 0, "No objects found");
+            objectRequest.ObjectId = objectId;
+            objectRequest.Purge();
         }
     }
 }
