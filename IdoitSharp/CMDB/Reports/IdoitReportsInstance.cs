@@ -9,7 +9,10 @@
         {
         }
 
-        public int? ObjectId { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        /// <summary>
+        /// Id of the report you want to request. Leave null to get all.
+        /// </summary>
+        public int? ObjectId { get; set; }
 
         /// <summary>
         /// Read all reports. Optionally set property ObjectId.

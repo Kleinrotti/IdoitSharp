@@ -1,4 +1,5 @@
 ﻿using IdoitSharp.CMDB.Reports;
+using IdoitSharp.Idoit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -15,6 +16,10 @@ namespace IdoitUnitTests.CMDB
         [TestMethod]
         public void ReadTest()
         {
+            var idoit = new IdoitInstance(idoitClient);
+            //only test with pro version
+            if (idoit.Version().type == "OPEN")
+                return;
             //Arrange
             var request = new IdoitReportsInstance(idoitClient);
             var result = request.Read();
