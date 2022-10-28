@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/Kleinrotti/IdoitSharp</PackageProjectUrl>
@@ -30,7 +30,7 @@ Library to make your i-doit API calls in C#</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Anemonis.JsonRpc" Version="1.24.2" />
+    <PackageReference Include="Anemonis.JsonRpc" Version="1.25.0" />
     <PackageReference Include="Anemonis.JsonRpc.ServiceClient" Version="1.16.0" />
   </ItemGroup>
 

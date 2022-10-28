@@ -173,7 +173,7 @@
             </summary>
             <returns>An <see cref="T:IdoitSharp.CMDB.Logbook.IdoitLogbookResponse"/> array.</returns>
         </member>
-        <member name="M:IdoitSharp.CMDB.Logbook.IdoitLogbookInstance.Read(System.Nullable{System.DateTime},System.Int32)">
+        <member name="M:IdoitSharp.CMDB.Logbook.IdoitLogbookInstance.Read(System.DateTime,System.Int32)">
             <summary>
             Read idoit logbook entries.
             </summary>
@@ -181,7 +181,7 @@
             <param name="limit">Limit number of entries.</param>
             <returns>An <see cref="T:IdoitSharp.CMDB.Logbook.IdoitLogbookResponse"/> array.</returns>
         </member>
-        <member name="M:IdoitSharp.CMDB.Logbook.IdoitLogbookInstance.Read(System.Int32,System.Nullable{System.DateTime},System.Int32)">
+        <member name="M:IdoitSharp.CMDB.Logbook.IdoitLogbookInstance.Read(System.Int32,System.DateTime,System.Int32)">
             <summary>
             Read idoit logbook entries for a specific object.
             </summary>
@@ -297,6 +297,11 @@
             Type of the object. Optional when creating a new object.
             </summary>
         </member>
+        <member name="P:IdoitSharp.CMDB.Object.IdoitObjectInstance.Template">
+            <summary>
+            (Not supported in official API Plugin) Id of the template to use.
+            </summary>
+        </member>
         <member name="P:IdoitSharp.CMDB.Object.IdoitObjectInstance.Description">
             <summary>
             Description of the object. Optional when creating a new object.
@@ -372,6 +377,11 @@
         <member name="T:IdoitSharp.CMDB.Reports.IdoitReportsInstance">
             <summary>
             Provides methods for Reports.
+            </summary>
+        </member>
+        <member name="P:IdoitSharp.CMDB.Reports.IdoitReportsInstance.ObjectId">
+            <summary>
+            Id of the report you want to request. Leave null to get all.
             </summary>
         </member>
         <member name="M:IdoitSharp.CMDB.Reports.IdoitReportsInstance.Read">
