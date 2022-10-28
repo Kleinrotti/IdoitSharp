@@ -24,6 +24,11 @@ namespace IdoitSharp.CMDB.Object
         public IdoitCmdbStatus CmdbStatus { get; set; }
 
         /// <summary>
+        /// (Not supported in official API Plugin) Id of the template to use.
+        /// </summary>
+        public int Template { get; set; }
+
+        /// <summary>
         /// Description of the object. Optional when creating a new object.
         /// </summary>
         public string Description { get; set; }
@@ -47,6 +52,7 @@ namespace IdoitSharp.CMDB.Object
             parameter.Add("cmdb_status", CmdbStatus);
             parameter.Add("description", Description);
             parameter.Add("category", Category);
+            parameter.Add("useTemplate", Template);
             var response = Execute<IdoitResponse>("cmdb.object.create");
             if (!response.Success)
                 throw new IdoitBadResponseException(response.Message);
