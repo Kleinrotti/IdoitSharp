@@ -12,47 +12,6 @@ namespace IdoitUnitTests
         {
         }
 
-        //Delete
-        [TestMethod]
-        public void DeleteTest()
-        {
-            //Arrange
-            int cateId, objectId;
-            var objectRequest = new IdoitObjectInstance(idoitClient);
-            var categoryRequest = new AccessRequest();
-            var access = new IdoitMvcInstance<AccessResponse>(idoitClient);
-
-            //Act:Create the Object
-            objectRequest.CmdbStatus = IdoitCmdbStatus.INOPERATION;
-            objectRequest.Type = IdoitObjectTypes.CLIENT;
-            objectRequest.Value = "My Client";
-            objectId = objectRequest.Create();
-
-            //Act: Create the Category
-            categoryRequest.title = "Web GUI";
-            categoryRequest.description = "Web GUI description";
-            categoryRequest.type = " ES";
-            categoryRequest.formatted_url = "https://swsan.admin.acme-it.example/";
-            access.ObjectId = objectId;
-            access.ObjectRequest = categoryRequest;
-            cateId = access.Create();
-
-            //Act:Read the Category
-
-            var list = access.Read();
-            Assert.IsFalse(list.Length == 0, "No objects found");
-            //Assert
-            foreach (AccessResponse v in list)
-            {
-                Assert.IsNotNull(v.title);
-                Assert.IsNotNull(v.id);
-            }
-            access.CateId = cateId;
-            access.Delete();
-            objectRequest.ObjectId = objectId;
-            objectRequest.Delete();
-        }
-
         //Quickpurge
         [TestMethod]
         public void QuickpurgeTest()
@@ -73,14 +32,13 @@ namespace IdoitUnitTests
             categoryRequest.title = "Web GUI";
             categoryRequest.description = "Web GUI description";
             categoryRequest.type = " ES";
-            categoryRequest.formatted_url = "https://swsan.admin.acme-it.example/";
             access.ObjectId = objectId;
             access.ObjectRequest = categoryRequest;
             cateId = access.Create();
 
             //Act
             access.CateId = cateId;
-            access.Purge();
+            access.QuickPurge();
 
             objectRequest.ObjectId = objectId;
             objectRequest.Purge();
@@ -106,7 +64,6 @@ namespace IdoitUnitTests
             categoryRequest.title = "Web GUI";
             categoryRequest.description = "Web GUI description";
             categoryRequest.type = " ES";
-            categoryRequest.formatted_url = "https://swsan.admin.acme-it.example/";
             access.ObjectId = objectId;
             access.ObjectRequest = categoryRequest;
             cateId = access.Create();
@@ -115,7 +72,6 @@ namespace IdoitUnitTests
             categoryRequest.title = "Web GUI 2";
             categoryRequest.description = "Web GUI 2 description";
             categoryRequest.type = " SE";
-            categoryRequest.formatted_url = "https://swsan.admin.acme-it.example/";
             categoryRequest.category_id = cateId;
             //categoryRequest.category_id = cateId;
             access.ObjectRequest = categoryRequest;
@@ -155,7 +111,6 @@ namespace IdoitUnitTests
             categoryRequest.title = "Web GUI";
             categoryRequest.description = "Web GUI description";
             categoryRequest.type = " ES";
-            categoryRequest.formatted_url = "https://swsan.admin.acme-it.example/";
             access.ObjectId = objectId;
             access.ObjectRequest = categoryRequest;
             cateId = access.Create();

@@ -31,8 +31,6 @@ namespace IdoitUnitTests
             objectId = objectRequest.Create();
 
             //Act: Create the Category
-            categoryRequest.latitude = "12";
-            categoryRequest.longitude = "323";
             categoryRequest.snmp_syslocation = "23";
             categoryRequest.description = "Web GUI description";
             Location.ObjectId = objectId;
@@ -41,7 +39,7 @@ namespace IdoitUnitTests
 
             //Act
             Location.CateId = cateId;
-            Location.Purge();
+            Location.QuickPurge();
 
             objectRequest.ObjectId = objectId;
             objectRequest.Purge();
@@ -65,8 +63,6 @@ namespace IdoitUnitTests
             objectId = objectRequest.Create();
 
             //Act: Create the Category
-            categoryRequest.latitude = "12";
-            categoryRequest.longitude = "323";
             categoryRequest.snmp_syslocation = "23";
             categoryRequest.description = "Web GUI description";
 
@@ -75,9 +71,6 @@ namespace IdoitUnitTests
             cateId = Location.Create();
 
             //Act: Update the Category
-            categoryRequest.latitude = "12";
-            categoryRequest.longitude = "323";
-            categoryRequest.snmp_syslocation = "23";
             categoryRequest.description = "Web GUI 2 description";
             Location.ObjectRequest = categoryRequest;
             Location.Update();
@@ -113,8 +106,6 @@ namespace IdoitUnitTests
             objectId = objectRequest.Create();
 
             //Act: Create the Category
-            categoryRequest.latitude = "12";
-            categoryRequest.longitude = "323";
             categoryRequest.snmp_syslocation = "23";
             categoryRequest.description = "Web GUI description";
 
